@@ -1,7 +1,12 @@
 import React from "react";
+import { AppBar } from "@mui/material";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+    <main className="">
+      <AppBar position="static">
+        <h1>Home</h1>
+      </AppBar>
+    </main>
   );
 }
