@@ -1,5 +1,5 @@
 from .user import User
 from .tag import Tag
-from .attende import Attende
+from .attendee import Attendee
 from .event import Event
 from .group import Group
