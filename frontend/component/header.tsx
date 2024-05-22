@@ -4,7 +4,7 @@ import person from "../_images/person.svg";
 
 export const Header = () => {
   return (
-    <AppBar position="static">
+    <AppBar position="static" className="min-h-[60px]">
       <Toolbar className="flex justify-between items-center">
         {/* 仮の画像が欲しい */}
         <Image src="/logo.svg" alt="logo" width={40} height={40} />
