@@ -1,0 +1,20 @@
+# GitHub リポジトリの "Actions" タブに表示されるワークフロー名
+name: example-event-app-actions
+
+# ワークフローが実行されるトリガーを定義する
+on: push
+
+# ワークフローのジョブを定義する
+jobs:
+  # ジョブ名
+  sample_build:
+    # 実行環境
+    runs-on: ubuntu-latest # GitHub ホストランナーを使用(無料枠の確認する)
+    # アクション
+    steps:
+        # GitHub リポジトリをチェックアウト
+      - uses: actions/checkout@v2
+        # ワークスペースの作成
+      - name: Run a one-line script
+        run: echo Hello, world!
+
