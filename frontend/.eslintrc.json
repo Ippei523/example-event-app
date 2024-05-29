@@ -14,4 +14,4 @@
       "quotes": ["error", "single"],
       "no-console": ["error", { "allow": ["error"] }]
     }
-  }
+}
