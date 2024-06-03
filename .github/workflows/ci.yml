@@ -18,6 +18,12 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
         # フロントエンドのテストを実行
+        # frontendディレクトリで依存関係をインストール
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./frontend
+        # frontendディレクトリでESLintを実行
       - name: Run ESLint
-        run: eslint . --ext .js,.jsx,.ts,.tsx
+        run: npx eslint . --ext .js,.jsx,.ts,.tsx
+        working-directory: ./frontend
 
