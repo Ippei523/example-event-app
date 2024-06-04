@@ -20,7 +20,10 @@ jobs:
         # フロントエンドのテストを実行
         # frontendディレクトリで依存関係をインストール
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest --save-dev
+          npm ls
         working-directory: ./frontend
         # frontendディレクトリでESLintを実行
       - name: Run ESLint
