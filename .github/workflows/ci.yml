@@ -23,7 +23,6 @@ jobs:
         run: |
           npm install
           npm install @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest --save-dev
-          npm ls
         working-directory: ./frontend
         # frontendディレクトリでESLintを実行
       - name: Run ESLint
