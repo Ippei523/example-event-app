@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
-import person from "../_images/person.svg";
+import person from "../images/person.svg";
 
 export const Header = () => {
   return (
