@@ -17,6 +17,7 @@ jobs:
         # ワークスペースの作成
       - name: Run a one-line script
         run: echo Hello, world!
+
         # フロントエンドのテストを実行
         # frontendディレクトリで依存関係をインストール
       - name: Install dependencies
@@ -24,8 +25,20 @@ jobs:
           npm install
           npm install @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest --save-dev
         working-directory: ./frontend
+
         # frontendディレクトリでESLintを実行
       - name: Run ESLint
         run: npx eslint . --ext .js,.jsx,.ts,.tsx
         working-directory: ./frontend
+
+        # バックエンドのテストを実行
+        # backendディレクトリで依存関係をインストール
+      - name: Install Flake8
+        run: pip install flake8
+        working-directory: ./backend
+
+        # backendディレクトリでFlake8を実行
+      - name: Run Flake8
+        run: flake8 app
+        working-directory: ./backend
 
