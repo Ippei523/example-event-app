@@ -5,7 +5,7 @@ export const Footer = () => {
     <AppBar
       component="footer"
       position="static"
-      className="bg-gray-500 min-h-[140px]"
+      className="bg-gray-500 min-h-[70px]"
     >
       <Box className="container mx-auto">
         <Typography className="text-center">© 2021 Event Management</Typography>
