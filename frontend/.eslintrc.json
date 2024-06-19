@@ -8,6 +8,10 @@
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint"],
     "rules": {
-      "react-hooks/exhaustive-deps": "error"
+      "prettier-plugin-organize-imports": "error", // 未使用のimportsのエラー
+      "no-console": ["error", { "allow": ["error"] }], // consoleが残っているエラー(console.errorは許可する)
+      "@typescript-eslint/no-unused-vars": "error", // 未使用の変数のエラー
+      "@typescript-eslint/no-explicit-any": "error", // any型のエラー
+      "quotes": ["error", "single"] // シングルクォートで囲まれていることを要求する
     }
 }
