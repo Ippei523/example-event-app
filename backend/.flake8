@@ -1,0 +1,4 @@
+[flake8]
+max-line-length = 88
+extend-ignore = E203
+exclude = app/fixtures, app/migrations, app/models/__init__.py, app/tests/factories/__init__.py, app/tests/__init__.py, app/views/__init__.py, app/views/__init__.py, app/apps.py, app/admin.py

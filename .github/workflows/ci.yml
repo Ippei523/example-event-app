@@ -1,0 +1,36 @@
+# GitHub リポジトリの "Actions" タブに表示されるワークフロー名
+name: example-event-app-actions
+
+# ワークフローが実行されるトリガーを定義する
+on: push
+
+# ワークフローのジョブを定義する
+jobs:
+  # ジョブ名
+  sample_build:
+    # 実行環境
+    runs-on: ubuntu-latest # GitHub ホストランナーを使用(無料枠の確認する)
+    # アクション
+    steps:
+        # GitHub リポジトリをチェックアウト
+      - uses: actions/checkout@v2
+
+        # フロントエンドのlintテストを実行
+        # frontendディレクトリで依存関係をインストール
+        # frontendディレクトリでESLintを実行
+      - name: frontend-lint
+        run: |
+          npm install
+          npm install @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest --save-dev
+          npx eslint . --ext .js,.jsx,.ts,.tsx
+        working-directory: ./frontend
+
+        # バックエンドのlintテストを実行
+        # backendディレクトリで依存関係をインストール
+        # backendディレクトリでFlake8を実行
+      - name: backend-lint
+        run: |
+          pip install flake8
+          flake8 app
+        working-directory: ./backend
+
