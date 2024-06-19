@@ -5,21 +5,21 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONBUFFERED 1
 
 # ディレクトリを作成
-RUN mkdir /backend-app
+# RUN mkdir /app
 
 # 依存関係をインストール
-COPY backend /backend-app
+COPY backend /app
 
 # ワークディレクトリを指定
-WORKDIR /backend-app
+WORKDIR /app
 
 RUN pip install --upgrade pip
 
 # requirements.txtに記載されたパッケージをインストール
-RUN pip install -r /backend-app/requirements.txt
+RUN pip install -r /app/requirements.txt
 
 # プロジェクトのファイルをコピー
-COPY . /backend-app/
+COPY . /app/
 
 # ポートを開放
 CMD python manage.py runserver 0.0.0.0:8000
